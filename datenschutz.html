@@ -178,6 +178,21 @@
     }
     .footer-links a:hover { color: var(--gold); }
 
+
+    /* ── LANGUAGE SWITCH ──────────────────────────────────────────────────── */
+    .lang-switch {
+      display: flex; align-items: center; gap: 0.35rem;
+      margin-left: auto;
+    }
+    .lang-switch a {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.38); text-decoration: none;
+      transition: color 0.3s;
+    }
+    .lang-switch a:hover { color: var(--gold); }
+    .lang-switch .lang-active { color: var(--gold); pointer-events: none; }
+    .lang-divider { color: rgba(255,255,255,0.15); font-size: 0.65rem; user-select: none; }
+
     @media (max-width: 600px) {
       footer { flex-direction: column; text-align: center; }
       .footer-links { justify-content: center; }
@@ -188,6 +203,12 @@
 
 <nav>
   <a href="./index.html" class="nav-brand">Gerrit <span>Petersen</span></a>
+
+  <div class="lang-switch">
+    <span class="lang-active">DE</span>
+    <span class="lang-divider">|</span>
+    <a href="./en/datenschutz.html">EN</a>
+  </div>
   <a href="./index.html" class="nav-back">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M19 12H5M12 5l-7 7 7 7"/>
