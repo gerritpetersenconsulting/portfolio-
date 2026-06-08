@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – Gerrit Petersen</title>
+  <style>
+    /* ── LOCAL FONTS ─────────────────────────────────────────────────────── */
+    /* Cormorant Garamond */
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url('../fonts/cormorant-garamond-v21-latin-300.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('../fonts/cormorant-garamond-v21-latin-regular.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url('../fonts/cormorant-garamond-v21-latin-italic.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('../fonts/cormorant-garamond-v21-latin-600.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('../fonts/cormorant-garamond-v21-latin-700.woff2') format('woff2');
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0D1E35;
+      --navy-mid: #162944;
+      --navy-light: #1e3a5f;
+      --gold: #C4912A;
+      --gold-light: #D4A843;
+      --cream: #F7F5F0;
+      --gray-100: #F3F2EE;
+      --gray-200: #E8E6E0;
+      --gray-400: #9A9590;
+      --gray-600: #5C5752;
+      --gray-800: #2C2A27;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--gray-800);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,30,53,0.97);
+      backdrop-filter: blur(12px);
+      padding: 1rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(196,145,42,0.25);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 600; color: var(--white);
+      letter-spacing: 0.05em; text-decoration: none;
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: rgba(255,255,255,0.65); text-decoration: none;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; transition: color 0.3s;
+    }
+    .nav-back:hover { color: var(--gold); }
+    .nav-back svg { transition: transform 0.3s; }
+    .nav-back:hover svg { transform: translateX(-3px); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: var(--navy);
+      padding: 7rem 2rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(196,145,42,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-header-inner { max-width: 760px; margin: 0 auto; position: relative; }
+    .page-label {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      color: var(--gold); font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 1.25rem;
+    }
+    .page-label::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 600; color: var(--white); line-height: 1.15;
+    }
+
+    /* ── CONTENT ── */
+    main { flex: 1; padding: 4rem 2rem 5rem; }
+    .content-wrap { max-width: 760px; margin: 0 auto; }
+
+    .legal-section { margin-bottom: 3rem; }
+    .legal-section:last-child { margin-bottom: 0; }
+
+    .legal-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 600; color: var(--navy);
+      margin-bottom: 1rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .legal-section h2 svg { color: var(--gold); flex-shrink: 0; }
+
+    .legal-section p, .legal-section address {
+      font-size: 0.95rem; color: var(--gray-600);
+      line-height: 1.85; font-style: normal;
+      margin-bottom: 0.75rem;
+    }
+    .legal-section p:last-child, .legal-section address:last-child { margin-bottom: 0; }
+
+    .legal-section a {
+      color: var(--gold); text-decoration: none;
+      border-bottom: 1px solid rgba(196,145,42,0.35);
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .legal-section a:hover { color: var(--gold-light); border-color: var(--gold-light); }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+      padding: 1.5rem 1.75rem;
+      margin-top: 1rem;
+    }
+    .info-card p { margin-bottom: 0.4rem; }
+    .info-card p:last-child { margin-bottom: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-size: 0.78rem; color: rgba(255,255,255,0.4);
+      text-decoration: none; transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+
+    /* ── LANGUAGE SWITCH ──────────────────────────────────────────────────── */
+    .lang-switch {
+      display: flex; align-items: center; gap: 0.35rem;
+      margin-left: auto;
+    }
+    .lang-switch a {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.38); text-decoration: none;
+      transition: color 0.3s;
+    }
+    .lang-switch a:hover { color: var(--gold); }
+    .lang-switch .lang-active { color: var(--gold); pointer-events: none; }
+    .lang-divider { color: rgba(255,255,255,0.15); font-size: 0.65rem; user-select: none; }
+
+    @media (max-width: 600px) {
+      footer { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="./index.html" class="nav-brand">Gerrit <span>Petersen</span></a>
+
+  <div class="lang-switch">
+    <a href="../datenschutz.html">DE</a>
+    <span class="lang-divider">|</span>
+    <span class="lang-active">EN</span>
+  </div>
+  <a href="./index.html" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 5l-7 7 7 7"/>
+    </svg>
+    Back to Website
+  </a>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="page-label">Legal</div>
+    <h1>Privacy Policy</h1>
+  </div>
+</header>
+
+<main>
+  <div class="content-wrap">
+    <div class="legal-section">
+      <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Controller
+      </h2>
+      <p>Gerrit Petersen – for contact details see <a href="./impressum.html">Legal Notice</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Hosting
+      </h2>
+      <p>This website is hosted via GitHub Pages. The provider technically stores IP addresses and server log files. For further information please refer to the GitHub Privacy Statement: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Cookies
+      </h2>
+      <p>This website does not use cookies. No user data is stored or passed on to third parties.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+        Fonts
+      </h2>
+      <p>All fonts used on this website are loaded locally. No data is transmitted to third parties (e.g. Google Fonts).</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-copy">&copy; 2025 Gerrit Petersen. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="./impressum.html">Legal Notice</a>
+    <a href="./datenschutz.html">Privacy Policy</a>
+  </div>
+</footer>
+
+</body>
+</html>
