@@ -11,6 +11,12 @@
   <meta property="og:description" content="Experte für Operations Excellence, Post Merger Integration und Commercial Excellence in mittelständischen Unternehmensgruppen und PE-Portfoliounternehmen.">
   <meta property="og:image" content="./img/gerrit-petersen.jpg">
   <meta property="og:locale" content="de_DE">
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://petersenconsulting.eu">
+  <meta property="og:url" content="https://petersenconsulting.eu">
+  <link rel="alternate" hreflang="de" href="https://petersenconsulting.eu">
+  <link rel="alternate" hreflang="en" href="https://petersenconsulting.eu/en/">
+  <link rel="alternate" hreflang="x-default" href="https://petersenconsulting.eu">
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
@@ -132,7 +138,15 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       transition: color 0.3s;
+      position: relative;
     }
+    .nav-links a:not(.nav-cta)::after {
+      content: ''; position: absolute; bottom: -3px; left: 0;
+      width: 100%; height: 1px; background: var(--gold);
+      transform: scaleX(0); transform-origin: right;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); transform-origin: left; }
     .nav-links a:hover { color: var(--gold); }
     .nav-cta {
       background: var(--gold);
@@ -239,6 +253,7 @@
       display: inline-block;
     }
     .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-primary:active { transform: translateY(0); transition-duration: 0.1s; }
     .btn-outline {
       border: 1px solid rgba(255,255,255,0.3);
       color: var(--white);
@@ -253,6 +268,7 @@
       display: inline-block;
     }
     .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+    .btn-outline:active { transform: translateY(0); transition-duration: 0.1s; }
 
     .hero-image-wrap {
       position: relative; height: 100%;
@@ -290,6 +306,7 @@
       backdrop-filter: blur(8px);
       padding: 0.9rem 1.4rem;
       border-radius: 4px;
+      animation: float 5s 2.5s ease-in-out infinite;
     }
     .hero-badge-icon { color: var(--gold); display: flex; }
     .hero-badge-text { font-size: 0.75rem; color: var(--white); font-weight: 400; }
@@ -345,7 +362,7 @@
       border-left: 3px solid var(--gold);
       padding: 1.5rem 1.75rem;
       border-radius: 0 4px 4px 0;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s;
     }
     .highlight-card:hover { transform: translateX(6px); box-shadow: -4px 0 20px rgba(196,145,42,0.1); }
     .highlight-card-icon { color: var(--gold); margin-bottom: 0.75rem; display: flex; }
@@ -392,7 +409,7 @@
       transform: scaleX(0); transform-origin: left;
       transition: transform 0.4s;
     }
-    .leistung-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(196,145,42,0.3); transform: translateY(-4px); }
+    .leistung-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(196,145,42,0.3); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(13,30,53,0.22); }
     .leistung-card:hover::before { transform: scaleX(1); }
     .leistung-icon {
       width: 48px; height: 48px;
@@ -474,7 +491,9 @@
       padding: 1.5rem 2rem;
       border-radius: 4px;
       display: flex; align-items: center; gap: 1.25rem;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s;
     }
+    .sprache-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(13,30,53,0.09); }
     .sprache-icon { color: var(--gold); }
     .sprache-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--navy); }
     .sprache-card p { font-size: 0.8rem; color: var(--gray-400); }
@@ -572,18 +591,22 @@
       display: flex; align-items: center; gap: 1rem;
     } }
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(24px) scale(0.98); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-6px); }
     }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
     .reveal {
-      opacity: 0; transform: translateY(32px);
-      transition: opacity 0.7s cubic-bezier(0.25,0.8,0.25,1), transform 0.7s cubic-bezier(0.25,0.8,0.25,1);
+      opacity: 0; transform: translateY(26px) scale(0.985);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
@@ -614,6 +637,8 @@
       .cta-contact-row { flex-direction: column; gap: 1.25rem; }
       footer { flex-direction: column; text-align: center; }
       .footer-links { justify-content: center; }
+      .sprachen-grid { grid-template-columns: 1fr; max-width: 100%; }
+      .sprache-card { padding: 1.25rem 1.5rem; }
     }
   </style>
   <script type="application/ld+json">
