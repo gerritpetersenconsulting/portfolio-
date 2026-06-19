@@ -364,7 +364,7 @@
       border-radius: 0 4px 4px 0;
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s;
     }
-    .highlight-card:hover { transform: translateX(6px); box-shadow: -4px 0 20px rgba(196,145,42,0.1); }
+    .highlight-card:hover, .highlight-card.touch-active { transform: translateX(6px); box-shadow: -4px 0 20px rgba(196,145,42,0.1); }
     .highlight-card-icon { color: var(--gold); margin-bottom: 0.75rem; display: flex; }
     .highlight-card h4 {
       font-family: 'Cormorant Garamond', serif;
@@ -409,7 +409,7 @@
       transform: scaleX(0); transform-origin: left;
       transition: transform 0.4s;
     }
-    .leistung-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(196,145,42,0.3); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(13,30,53,0.22); }
+    .leistung-card:hover, .leistung-card.touch-active { background: rgba(255,255,255,0.07); border-color: rgba(196,145,42,0.3); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(13,30,53,0.22); }
     .leistung-card:hover::before { transform: scaleX(1); }
     .leistung-icon {
       width: 48px; height: 48px;
@@ -493,7 +493,7 @@
       display: flex; align-items: center; gap: 1.25rem;
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s;
     }
-    .sprache-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(13,30,53,0.09); }
+    .sprache-card:hover, .sprache-card.touch-active { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(13,30,53,0.09); }
     .sprache-icon { color: var(--gold); }
     .sprache-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--navy); }
     .sprache-card p { font-size: 0.8rem; color: var(--gray-400); }
@@ -1048,6 +1048,13 @@
 
   // Dynamisches Copyright-Jahr
   document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  // Touch-Feedback für Safari/iOS (kein nativer :hover bei Touch auf reinen divs)
+  document.querySelectorAll('.highlight-card, .leistung-card, .sprache-card').forEach(card => {
+    card.addEventListener('touchstart', () => card.classList.add('touch-active'), { passive: true });
+    card.addEventListener('touchend', () => card.classList.remove('touch-active'));
+    card.addEventListener('touchcancel', () => card.classList.remove('touch-active'));
+  });
 
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
